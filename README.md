@@ -2,11 +2,23 @@
 その結果など ↓
 
 ## CRAFT
-- 実行
+- GPU環境でないと、エラーで実行出来ない。
+  - （できるようにする方法はあるっぽい）
     ```
-    python test.py  --trained_model=models/craft_ic15_20k.pth   --test_folder=datasets/myData/
+    RuntimeError: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() is False. If you are running on a CPU-only machine, please use torch.load with map_location=torch.device('cpu') to map your storages to the CPU.
+    ```
+- 実行
+  - 学習済みモデルをダンロードする。
+    - [LinkRefiner (CTW1500)](https://drive.google.com/file/d/1XSaFwBkOaFOdtk4Ane3DFyJGPRw6v5bO/view)  など。
+    - 詳しくは、本家の README を参照。
+  - `CRAFT-pytorch/models/` にコピーする。
+  - スクリプトを実行。
+    ```
+    python3 test.py  --trained_model=models/craft_refiner_CTW1500.pth   --test_folder=datasets/myData/
     ```
 - 結果
+  - 前回試した時のデータを間違って消してしまった...ので、現在やり直し中...。
+  - 新しい技術は出てきてるので、諦めて後回しにするかも...。
 
 - 実行時間など(未)
 
